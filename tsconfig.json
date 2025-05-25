@@ -4,10 +4,44 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/my-workspace-e2e"
+      "path": "./apps/waterpark-e2e"
     },
     {
-      "path": "./apps/my-workspace"
+      "path": "./apps/waterpark"
+    },
+    {
+      "path": "./libs/ui/ui-waterpark"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "moduleResolution": "node16",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2020",
+    "module": "Node16",
+    "lib": [
+      "ES2020",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@my-workspace/ui-waterpark": [
+        "libs/ui/ui-waterpark/src/index.ts"
+      ],
+      "@waterpark/ui/*": [
+        "libs/ui/*/src/index.ts"
+      ],
+      "@waterpark/e2e/*": [
+        "apps/waterpark-e2e/src/app/*"
+      ],
+      "@waterpark/waterpark/*": [
+        "apps/waterpark/src/app/*"
+      ]
+    },
+  }
 }
