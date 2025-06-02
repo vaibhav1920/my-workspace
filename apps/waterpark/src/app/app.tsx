@@ -1,19 +1,22 @@
 // Uncomment this line to use CSS modules
 // import styles from './app.module.css';
-import {  Routes } from 'react-router';
-import {  getWaterParkRoutes}  from '@my-workspace/ui-waterpark';
-import { Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+import * as React from 'react';
+import { getWaterParkRoutes}  from '@my-workspace/ui-waterpark';
+//import { Provider } from 'react-redux';
+//import { store } from './app/store.js';
 
+const AllRouters = () => {
+  return [...getWaterParkRoutes()]
+}
 export function App() {
   return (
-        <Routes>
-            {getWaterParkRoutes}
-        </Routes>
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <Routes>{AllRouters()}</Routes>
+    </React.Suspense>
   );
 }
-console.log(<Routes>
-            <Route path="/" element={<App />} />
-        </Routes>);
+
 export default App;
 
 

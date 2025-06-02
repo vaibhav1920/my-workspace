@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import UiWaterpark from './ui-waterpark';
+import Header from './header';
 
-describe('UiWaterpark', () => {
+describe('Header', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<UiWaterpark />);
+    const { baseElement } = render(<Header />);
     expect(baseElement).toBeTruthy();
   });
 });

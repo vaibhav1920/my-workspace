@@ -1,26 +1,13 @@
-import React, { JSX } from 'react';
-//import { LayoutRouteProps,PathRouteProps,IndexRouteProps } from 'react-router-dom';
-import WaterParkPage from './ui-waterpark';
-//const WaterParkPage = React.lazy(() => import('./ui-waterpark'));
+import React from 'react';
+import { LayoutRouteProps,PathRouteProps,IndexRouteProps } from 'react-router-dom';
 
-// export const waterParkRoutesProps = () => {
-//     const props : (PathRouteProps | LayoutRouteProps | IndexRouteProps)[] = [
-//         { path : '/ui-waterpark', element: (
-//                 <React.Suspense fallback={<div>Loading...</div>}>
-//                     <WaterParkPage />
-//                 </React.Suspense>
-//             )},
-//     ];
-//     return props;
-// };
+const WaterParkPage = React.lazy(() => import('./waterpark-Client'));
+const CreateNewClient = React.lazy(() => import('./create-new-client/create-new-client'));
 
-export const waterParkRoutesProps: Array<{ path: string; element: JSX.Element }> = [
-  {
-    path: "/ui-waterpark",
-    element: (
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <WaterParkPage />
-      </React.Suspense>
-    ),
-  }
-];
+export const waterParkRoutesProps = () => {
+    const props : (PathRouteProps | LayoutRouteProps | IndexRouteProps)[] = [
+        { path : '/waterparkClient', element: <WaterParkPage />},
+        { path : '/createnewclient', element: <CreateNewClient />},
+    ];
+    return props;
+};

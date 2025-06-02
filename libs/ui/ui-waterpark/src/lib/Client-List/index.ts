@@ -1,2 +1,2 @@
-export * from './ui-waterpark';
+export * from './waterpark-Client';
 export * from './client-list.routes';
